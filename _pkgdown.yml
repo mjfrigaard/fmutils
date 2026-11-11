@@ -1,0 +1,23 @@
+url: https://mjfrigaard.github.io/fmutils/
+template:
+  bootstrap: 5
+
+reference:
+- title: Book helpers
+  contents:
+  - co_box
+  - status
+  - "%nin%"
+- title: Theme
+  contents:
+  - theme_fmggp2
+- title: Fonts
+  contents:
+  - load_fm_fonts
+  - add_fonts
+  - load_fmggp2_fonts
+  - import_fmggp2_fonts
+  - check_fonts
+  - check_assets
+  - list_fonts
+  - font_path

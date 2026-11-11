@@ -1,0 +1,25 @@
+Package: fmutils
+Title: Helpers for the Field Manual Books
+Version: 0.2.0
+Authors@R: person("Martin", "Frigaard", email = "mjfrigaard@pm.me", role = c("aut", "cre"))
+Description: Small helpers the field manual books share: Quarto callout
+    boxes, chapter status callouts, a negated %in%, the Ubuntu fonts, and the
+    book theme for ggplot2: field manual.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Imports:
+    cli,
+    extrafont,
+    ggplot2 (>= 4.0.0),
+    glue,
+    showtext,
+    sysfonts
+Suggests:
+    knitr,
+    testthat (>= 3.0.0),
+    withr
+Config/testthat/edition: 3
+URL: https://mjfrigaard.github.io/fmutils/, https://github.com/mjfrigaard/fmutils
+BugReports: https://github.com/mjfrigaard/fmutils/issues
+Config/roxygen2/version: 8.1.1
