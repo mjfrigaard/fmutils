@@ -13,4 +13,5 @@ test_that("co_box writes a callout", {
   expect_output(co_box("o", "Header", "Body", fold = TRUE), "collapse='true'")
   expect_output(co_box("g", "Header", look = "minimal"), "appearance='minimal'")
   expect_error(co_box("z", "Header"), "Invalid")
+  expect_no_match(capture.output(co_box("b", "Header", "Body")), "color:", all = FALSE)
 })

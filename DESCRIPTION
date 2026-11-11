@@ -1,6 +1,6 @@
 Package: fmutils
 Title: Helpers for the Field Manual Books
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: person("Martin", "Frigaard", email = "mjfrigaard@pm.me", role = c("aut", "cre"))
 Description: Small helpers the field manual books share: Quarto callout
     boxes, chapter status callouts, a negated %in%, the Ubuntu fonts, and the

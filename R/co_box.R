@@ -39,7 +39,7 @@ co_box <- function(color, header, contents = "Your text", size = "1.05",
     "\n\n",
     ":::: {.callout-", class, " collapse='", fold, "'", " appearance='", look, "'}", "\n\n",
     "## [", header, "]{style='font-weight: bold; font-size: ", hsize, "em;'}\n\n",
-    "::: {style='font-size: ", size, "em; color: #282b2d;'}\n\n",
+    "::: {style='font-size: ", size, "em;'}\n\n",
     "\n", glue::glue_collapse(contents), "\n\n",
     "::: \n\n",
     "::::", "\n"

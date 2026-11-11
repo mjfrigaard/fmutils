@@ -1,3 +1,7 @@
+# fmutils 0.2.1
+
+* `co_box()` no longer sets a dark grey color on the callout body, so the text follows the page theme (readable in dark mode).
+
 # fmutils 0.2.0
 
 * New `load_fm_fonts()` registers the bundled Ubuntu families with `sysfonts` and turns on `showtext`. Inside knitr or Quarto it sets the `fig.showtext` chunk option, so knitr matches the `showtext` resolution to each chunk's `dpi` and `fig.retina`. Calling `showtext::showtext_auto()` alone keeps the 96 dpi default and draws text too small in high resolution figures.
