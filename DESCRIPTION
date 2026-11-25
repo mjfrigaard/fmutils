@@ -17,8 +17,13 @@ Imports:
     sysfonts
 Suggests:
     knitr,
+    rmarkdown,
+    stackcallr,
     testthat (>= 3.0.0),
     withr
+VignetteBuilder: knitr
+Remotes:
+    mjfrigaard/stackcallr
 Config/testthat/edition: 3
 URL: https://mjfrigaard.github.io/fmutils/, https://github.com/mjfrigaard/fmutils
 BugReports: https://github.com/mjfrigaard/fmutils/issues

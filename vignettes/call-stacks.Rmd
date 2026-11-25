@@ -1,0 +1,65 @@
+---
+title: "Call stacks"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Call stacks}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| label: setup
+#| include: false
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+fmutils has three groups of helpers. `co_box()` and `status()` write Quarto callouts, and `%nin%` is a negated `%in%`. These stand alone and call no other fmutils functions. The font loaders and the ggplot2 theme call each other, so this article shows how they connect.
+
+The trees below come from [`stackcallr`](https://mjfrigaard.github.io/stackcallr/). `call_tree_dir()` parses the files in `R/` without running them. `include_ns` adds the calls into `extrafont`, `sysfonts`, and `showtext`.
+
+## Call stack
+
+### load_fm_fonts()
+
+`load_fm_fonts()` registers the bundled Ubuntu fonts with `sysfonts` and turns on `showtext`.
+
+```{r}
+#| label: call-stack-load-fm-fonts
+#| eval: !expr requireNamespace("stackcallr", quietly = TRUE)
+#| collapse: false
+#| comment: ""
+stackcallr::call_tree_dir("../R",
+  root = "load_fm_fonts",
+  include_ns = c("extrafont", "sysfonts", "showtext")
+)
+```
+
+### load_fmggp2_fonts()
+
+`load_fmggp2_fonts()` checks for the fonts with `check_fonts()`. If they are missing, it imports them with `extrafont` and adds the regular Ubuntu face.
+
+```{r}
+#| label: call-stack-load-fmggp2-fonts
+#| eval: !expr requireNamespace("stackcallr", quietly = TRUE)
+#| collapse: false
+#| comment: ""
+stackcallr::call_tree_dir("../R",
+  root = "load_fmggp2_fonts",
+  include_ns = c("extrafont", "sysfonts", "showtext")
+)
+```
+
+### theme_fmggp2()
+
+`theme_fmggp2()` imports the fonts every time it runs, then builds the `ggplot2` theme.
+
+```{r}
+#| label: call-stack-theme-fmggp2
+#| eval: !expr requireNamespace("stackcallr", quietly = TRUE)
+#| collapse: false
+#| comment: ""
+stackcallr::call_tree_dir("../R",
+  root = "theme_fmggp2",
+  include_ns = c("extrafont", "sysfonts", "showtext")
+)
+```
